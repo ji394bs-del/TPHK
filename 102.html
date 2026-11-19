@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>北海道冬日繪本旅｜12/19 - 12/26 行程手帳</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-paper: #FFFCF6;
+      --ink: #3E3A39;
+      --coral: #F2A497;
+      --yamabuki: #F6D27A;
+      --water: #A8D3E6;
+      --bamboo: #B9DAA5;
+      --card-surface: #FFFCF6;
+      --soft-cream: #FDF7EB;
+      --border-w: 3px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-pill: 999px;
+      --shadow-hard: 0 5px 0 #3E3A39;
+      --shadow-sm: 0 3px 0 #3E3A39;
+      --anim-float: 3.4s;
+      --anim-bounce: 0.42s;
+    }
+
+    body.reduced-motion {
+      --anim-float: 0s;
+      --anim-bounce: 0s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root {
+        --anim-float: 0s;
+        --anim-bounce: 0s;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body.reduced-motion {
+      scroll-behavior: auto;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Huninn', -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16px;
+      overflow-x: hidden;
+      padding-top: 76px;
+      padding-bottom: 64px;
+    }
+
+    /* 頂端固定選單 */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background-color: var(--bg-paper);
+      border-bottom: var(--border-w) solid var(--ink);
+      padding: 10px 14px;
+    }
+
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 1rem;
+      background-color: var(--yamabuki);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px 4px 8px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 2px;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 2px solid transparent;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      background-color: var(--water);
+      border-color: var(--ink);
+      outline: none;
+    }
+
+    .motion-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .motion-toggle[aria-pressed="true"] {
+      background-color: var(--bamboo);
+    }
+
+    .motion-toggle:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 var(--ink);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 16px 0;
+    }
+
+    .絵本-card {
+      background-color: var(--card-surface);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-hard);
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .絵本-card {
+        padding: 26px;
+      }
+    }
+
+    /* 首頁 Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+      background-color: var(--soft-cream);
+    }
+
+    @media (min-width: 720px) {
+      .hero {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--coral);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      margin: 0 0 8px;
+      font-size: clamp(1.75rem, 5vw, 2.55rem);
+      line-height: 1.25;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 18px;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .countdown-box {
+      background-color: var(--bg-paper);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .countdown-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      text-align: center;
+    }
+
+    .cd-unit {
+      border: var(--border-w) solid var(--ink);
+      border-radius: 14px;
+      padding: 8px 4px;
+      background-color: var(--yamabuki);
+    }
+
+    .cd-unit:nth-child(2) {
+      background-color: var(--water);
+    }
+
+    .cd-unit:nth-child(3) {
+      background-color: var(--bamboo);
+    }
+
+    .cd-unit:nth-child(4) {
+      background-color: var(--coral);
+    }
+
+    .cd-num {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.2;
+      display: block;
+    }
+
+    .cd-text {
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero-art-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      display: block;
+    }
+
+    /* 輕輕動插圖動畫 */
+    .float-slow {
+      animation: gentleFloat var(--anim-float) ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .float-delay {
+      animation: gentleFloat var(--anim-float) ease-in-out 1.1s infinite;
+      transform-origin: center;
+    }
+
+    @keyframes gentleFloat {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* 區塊標題 */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .section-title-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .section-tag {
+      background-color: var(--water);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 2px 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* 航班卡片 */
+    .flight-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 680px) {
+      .flight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .flight-card {
+      background-color: var(--bg-paper);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .flight-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .flight-code {
+      background-color: var(--coral);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 3px 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .flight-date {
+      font-weight: 700;
+      background-color: var(--yamabuki);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 3px 12px;
+      font-size: 0.88rem;
+    }
+
+    .flight-route {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      padding: 10px;
+      background-color: var(--soft-cream);
+      border: var(--border-w) solid var(--ink);
+      border-radius: 14px;
+    }
+
+    .airport-code {
+      font-size: 1.35rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .airport-name {
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    .flight-time {
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: center;
+      background-color: var(--water);
+      border: var(--border-w) solid var(--ink);
+      border-radius: 12px;
+      padding: 6px 10px;
+    }
+
+    /* 日期切換按鈕 */
+    .day-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      scrollbar-width: thin;
+    }
+
+    .day-tab {
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 8px 15px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+
+    .day-tab:hover {
+      background-color: var(--soft-cream);
+    }
+
+    .day-tab.active {
+      background-color: var(--yamabuki);
+      transform: translateY(-2px);
+    }
+
+    .day-tab:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 0 var(--ink);
+    }
+
+    /* 切換日期彈跳效果 */
+    .timeline-panel {
+      animation: tabBounce var(--anim-bounce) cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes tabBounce {
+      0% {
+        opacity: 0.4;
+        transform: translateY(10px) scale(0.985);
+      }
+      65% {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.005);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .day-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      background-color: var(--soft-cream);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+
+    .day-banner-title {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .day-stay-pill {
+      background-color: var(--bamboo);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    /* 時間軸 */
+    .timeline {
+      position: relative;
+      padding-left: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 10px;
+      bottom: 10px;
+      width: 3px;
+      background-color: var(--ink);
+      border-radius: 3px;
+    }
+
+    .timeline-item {
+      position: relative;
+      background-color: var(--bg-paper);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -24px;
+      top: 18px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: var(--coral);
+      border: var(--border-w) solid var(--ink);
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      background-color: var(--water);
+    }
+
+    .timeline-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .time-badge {
+      font-weight: 700;
+      font-size: 0.9rem;
+      background-color: var(--soft-cream);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 2px 10px;
+    }
+
+    .must-badge {
+      background-color: var(--coral);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .transport-badge {
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 2px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .t-rail {
+      background-color: var(--water);
+    }
+
+    .t-car {
+      background-color: var(--yamabuki);
+    }
+
+    .t-walk {
+      background-color: var(--bamboo);
+    }
+
+    .t-stay {
+      background-color: var(--coral);
+    }
+
+    .timeline-title {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .timeline-note {
+      margin: 6px 0 0;
+      font-size: 0.9rem;
+      background-color: var(--soft-cream);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 8px 12px;
+    }
+
+    /* 住宿資訊 */
+    .hotel-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 640px) {
+      .hotel-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .hotel-card {
+      background-color: var(--soft-cream);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hotel-nights {
+      display: inline-block;
+      background-color: var(--yamabuki);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 2px 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hotel-name {
+      margin: 0 0 6px;
+      font-size: 1.12rem;
+    }
+
+    .hotel-area {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* 清單與待辦 */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 760px) {
+      .checklist-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .list-box {
+      background-color: var(--bg-paper);
+      border: var(--border-w) solid var(--ink);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-bottom: 2px dashed var(--ink);
+      padding-bottom: 8px;
+    }
+
+    .list-title {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .list-count {
+      background-color: var(--bamboo);
+      border: 2px solid var(--ink);
+      border-radius: var(--radius-pill);
+      padding: 1px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .check-items {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background-color: var(--soft-cream);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 8px 10px;
+    }
+
+    .check-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      flex: 1;
+      font-size: 0.94rem;
+      user-select: none;
+    }
+
+    .check-input {
+      width: 20px;
+      height: 20px;
+      accent-color: var(--coral);
+      border: 2px solid var(--ink);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .check-label.done span {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .del-btn {
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      padding: 2px 7px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .del-btn:hover {
+      background-color: var(--coral);
+    }
+
+    .add-form {
+      display: flex;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .add-input {
+      flex: 1;
+      min-width: 0;
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 7px 10px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    .add-btn {
+      background-color: var(--yamabuki);
+      color: var(--ink);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      padding: 7px 12px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .add-btn:hover {
+      background-color: var(--water);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.88rem;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 頂端固定選單 -->
+  <header class="top-nav" role="banner">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand">
+        <!-- 迷你雪狐/繪本標誌 SVG -->
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <circle cx="18" cy="18" r="15" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M10 14L13 8L17 13" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M26 14L23 8L19 13" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="14" cy="19" r="2" fill="#3E3A39"/>
+          <circle cx="22" cy="19" r="2" fill="#3E3A39"/>
+          <path d="M16.5 23Q18 25 19.5 23" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span>北海道冬旅</span>
+      </a>
+
+      <nav class="nav-links" aria-label="行程導覽">
+        <a href="#flights" class="nav-link">航班</a>
+        <a href="#itinerary" class="nav-link">每日行程</a>
+        <a href="#hotels" class="nav-link">住宿</a>
+        <a href="#lists" class="nav-link">清單與待辦</a>
+      </nav>
+
+      <button
+        type="button"
+        id="motionToggle"
+        class="motion-toggle"
+        aria-pressed="false"
+        title="切換減少動態效果"
+      >
+        <span>動態：開</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- 首頁插圖＋標題＋出發倒數 -->
+    <section class="絵本-card hero" aria-labelledby="heroTitle">
+      <div>
+        <div class="hero-badge">2026/12/19 – 12/26 · 8天7夜</div>
+        <h1 id="heroTitle" class="hero-title">札幌・登別・洞爺・小樽<br />冬日繪本散步手帳</h1>
+        <p class="hero-subtitle">
+          從雪白札幌出發，走訪登別地獄谷與洞爺湖畔，再到小樽看企鵝散步與大通公園燈飾，把每一刻都收進暖暖的冬日記憶裡。
+        </p>
+
+        <div class="countdown-box" aria-live="polite">
+          <div class="countdown-label">
+            <span>出發倒數（2026年12月19日 08:35 桃園起飛）</span>
+            <span id="tripStatusTag">準備出發中</span>
+          </div>
+          <div class="countdown-grid">
+            <div class="cd-unit">
+              <span id="cdDays" class="cd-num">--</span>
+              <span class="cd-text">天</span>
+            </div>
+            <div class="cd-unit">
+              <span id="cdHours" class="cd-num">--</span>
+              <span class="cd-text">時</span>
+            </div>
+            <div class="cd-unit">
+              <span id="cdMins" class="cd-num">--</span>
+              <span class="cd-text">分</span>
+            </div>
+            <div class="cd-unit">
+              <span id="cdSecs" class="cd-num">--</span>
+              <span class="cd-text">秒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 自繪北海道特色插圖 SVG（時計台、雪山、JR/飛機、雪花與小動物） -->
+      <div class="hero-art-wrap">
+        <svg class="hero-svg" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="北海道冬日繪本插圖：雪山、札幌時計台與飛機">
+          <!-- 背景圓框 -->
+          <circle cx="180" cy="150" r="134" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3.5"/>
+          <!-- 雪地起伏 -->
+          <path d="M36 226C85 205 140 212 195 224C250 236 296 222 326 208L304 252H58L36 226Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+          <!-- 遠方山脈 -->
+          <path d="M62 212L118 134L165 188L206 144L268 214" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+          <!-- 山頂積雪 -->
+          <path d="M104 153L118 134L133 153L124 150L118 158L112 150L104 153Z" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+
+          <!-- 札幌時計台風格小建築 -->
+          <g class="float-slow">
+            <rect x="218" y="148" width="56" height="62" rx="6" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <polygon points="212,148 246,118 280,148" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <!-- 鐘樓塔 -->
+            <rect x="236" y="96" width="20" height="24" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+            <polygon points="232,96 246,76 260,96" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="246" cy="108" r="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+            <!-- 窗戶 -->
+            <rect x="228" y="160" width="10" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="254" y="160" width="10" height="14" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="241" y="182" width="10" height="28" rx="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          </g>
+
+          <!-- 可愛繪本小飛機 -->
+          <g class="float-delay">
+            <path d="M66 94C66 88 74 85 82 87L124 96L142 74H152L142 99L160 103L169 92H175L171 106C174 108 174 113 169 114L138 113L120 132H110L122 111L76 102C69 101 66 98 66 94Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
+          </g>
+
+          <!-- 前景可愛小企鵝（呼應小樽企鵝走路） -->
+          <g class="float-slow">
+            <ellipse cx="118" cy="224" rx="16" ry="21" fill="#3E3A39"/>
+            <ellipse cx="121" cy="226" rx="10" ry="15" fill="#FFFCF6"/>
+            <circle cx="122" cy="210" r="2" fill="#FFFCF6"/>
+            <polygon points="131,213 139,216 131,219" fill="#F2A497" stroke="#3E3A39" stroke-width="2" stroke-linejoin="round"/>
+            <ellipse cx="112" cy="245" rx="6" ry="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+            <ellipse cx="124" cy="245" rx="6" ry="3.5" fill="#F2A497" stroke="#3E3A39" stroke-width="2"/>
+          </g>
+
+          <!-- 裝飾小雪花/星星 -->
+          <circle cx="292" cy="84" r="6" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+          <circle cx="56" cy="158" r="5" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5"/>
+          <circle cx="186" cy="64" r="4.5" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 航班卡片 -->
+    <section id="flights" class="絵本-card" aria-labelledby="flightsTitle">
+      <div class="section-head">
+        <div class="section-title-group">
+          <!-- 飛機小 SVG -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M5 18L13 15L22 7L25 10L19 17L27 21L24 24L16 20L10 26L7 25L10 19L5 18Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+          </svg>
+          <h2 id="flightsTitle" class="section-title">航班資訊</h2>
+        </div>
+        <span class="section-tag">中華航空 China Airlines</span>
+      </div>
+
+      <div class="flight-grid">
+        <article class="flight-card">
+          <div class="flight-top">
+            <span class="flight-code">CI0130 去程</span>
+            <span class="flight-date">12月19日（六）</span>
+          </div>
+          <div class="flight-route">
+            <div>
+              <span class="airport-code">TPE</span>
+              <span class="airport-name">台北出發</span>
+            </div>
+            <!-- 航線 SVG -->
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+              <path d="M4 12H42" stroke="#3E3A39" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+              <path d="M37 7L43 12L37 17" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <span class="airport-code">CTS</span>
+              <span class="airport-name">新千歲抵達</span>
+            </div>
+          </div>
+          <div class="flight-time">起飛 08:35 ～ 抵達 13:15</div>
+        </article>
+
+        <article class="flight-card">
+          <div class="flight-top">
+            <span class="flight-code">CI0131 回程</span>
+            <span class="flight-date">12月26日（六）</span>
+          </div>
+          <div class="flight-route">
+            <div>
+              <span class="airport-code">CTS</span>
+              <span class="airport-name">新千歲出發</span>
+            </div>
+            <svg width="48" height="24" viewBox="0 0 48 24" fill="none" aria-hidden="true">
+              <path d="M4 12H42" stroke="#3E3A39" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round"/>
+              <path d="M37 7L43 12L37 17" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <span class="airport-code">TPE</span>
+              <span class="airport-name">台北抵達</span>
+            </div>
+          </div>
+          <div class="flight-time">起飛 14:40 ～ 抵達 18:15</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 每日行程 -->
+    <section id="itinerary" class="絵本-card" aria-labelledby="itineraryTitle">
+      <div class="section-head">
+        <div class="section-title-group">
+          <!-- 火車/地圖小 SVG -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="7" y="6" width="18" height="17" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5"/>
+            <rect x="10" y="10" width="12" height="6" rx="2" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/>
+            <circle cx="11.5" cy="19.5" r="1.8" fill="#3E3A39"/>
+            <circle cx="20.5" cy="19.5" r="1.8" fill="#3E3A39"/>
+            <path d="M10 26L8 29M22 26L24 29" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <h2 id="itineraryTitle" class="section-title">每日行程時間軸</h2>
+        </div>
+        <span class="section-tag">點選日期切換</span>
+      </div>
+
+      <div id="dayTabs" class="day-tabs" role="tablist" aria-label="選擇旅遊日期"></div>
+      <div id="dayPanel" class="timeline-panel" role="tabpanel"></div>
+    </section>
+
+    <!-- 住宿資訊 -->
+    <section id="hotels" class="絵本-card" aria-labelledby="hotelsTitle">
+      <div class="section-head">
+        <div class="section-title-group">
+          <!-- 旅館小 SVG -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M5 14L16 6L27 14V26H5V14Z" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="13" y="18" width="6" height="8" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/>
+          </svg>
+          <h2 id="hotelsTitle" class="section-title">住宿資訊</h2>
+        </div>
+        <span class="section-tag">共 7 晚</span>
+      </div>
+
+      <div class="hotel-list">
+        <article class="hotel-card">
+          <span class="hotel-nights">12月19日 ～ 12月21日（2晚）</span>
+          <h3 class="hotel-name">札幌凱悅酒店</h3>
+          <p class="hotel-area">札幌市區住宿據點，方便前往北海道神宮、大通公園與狸小路。</p>
+        </article>
+
+        <article class="hotel-card">
+          <span class="hotel-nights">12月21日 ～ 12月22日（1晚）</span>
+          <h3 class="hotel-name">第一瀧本館</h3>
+          <p class="hotel-area">登別溫泉經典飯店，鄰近登別地獄谷，享受溫泉與飯店設施。</p>
+        </article>
+
+        <article class="hotel-card">
+          <span class="hotel-nights">12月22日 ～ 12月23日（1晚）</span>
+          <h3 class="hotel-name">湖景飯店 洞爺乃之風</h3>
+          <p class="hotel-area">洞爺湖畔湖景溫泉度假體驗，隔日搭乘飯店接駁車返回札幌站。</p>
+        </article>
+
+        <article class="hotel-card">
+          <span class="hotel-nights">12月23日 ～ 12月26日（3晚）</span>
+          <h3 class="hotel-name">札幌STREAM飯店</h3>
+          <p class="hotel-area">後半段札幌市區住宿，串聯小樽一日遊、白色戀人博物館與回程機場移動。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 可打勾的待辦清單、出發前清單、行李清單 -->
+    <section id="lists" class="絵本-card" aria-labelledby="listsTitle">
+      <div class="section-head">
+        <div class="section-title-group">
+          <!-- 清單小 SVG -->
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect x="7" y="5" width="18" height="22" rx="4" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/>
+            <path d="M11 12L13 14L17 10" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 19L13 21L17 17" stroke="#3E3A39" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h2 id="listsTitle" class="section-title">待辦與準備清單</h2>
+        </div>
+        <span class="section-tag">自動儲存進度</span>
+      </div>
+
+      <div class="checklist-grid">
+        <!-- 1. 可打勾的待辦清單 -->
+        <div class="list-box">
+          <div class="list-header">
+            <h3 class="list-title">旅途待辦清單</h3>
+            <span id="count-todo" class="list-count">0/0</span>
+          </div>
+          <ul id="list-todo" class="check-items"></ul>
+          <form class="add-form" data-list="todo">
+            <input type="text" class="add-input" placeholder="新增待辦事項..." aria-label="新增待辦事項" required />
+            <button type="submit" class="add-btn">新增</button>
+          </form>
+        </div>
+
+        <!-- 2. 出發前清單 -->
+        <div class="list-box">
+          <div class="list-header">
+            <h3 class="list-title">出發前清單</h3>
+            <span id="count-pre" class="list-count">0/0</span>
+          </div>
+          <ul id="list-pre" class="check-items"></ul>
+          <form class="add-form" data-list="pre">
+            <input type="text" class="add-input" placeholder="新增出發前項目..." aria-label="新增出發前項目" required />
+            <button type="submit" class="add-btn">新增</button>
+          </form>
+        </div>
+
+        <!-- 3. 行李清單 -->
+        <div class="list-box">
+          <div class="list-header">
+            <h3 class="list-title">行李清單</h3>
+            <span id="count-pack" class="list-count">0/0</span>
+          </div>
+          <ul id="list-pack" class="check-items"></ul>
+          <form class="add-form" data-list="pack">
+            <input type="text" class="add-input" placeholder="新增行李物品..." aria-label="新增行李物品" required />
+            <button type="submit" class="add-btn">新增</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-note">所有打勾與新增項目會保存在本機瀏覽器中，方便隨時查看。</p>
+    </section>
+  </main>
+
+  <script>
+    const ITINERARY_DATA = [
+      {
+        dayKey: '12-19',
+        dateLabel: '12月19日（六）',
+        theme: '抵達新千歲＆札幌市區暖身散步',
+        stay: '入住：札幌凱悅酒店',
+        items: [
+          { time: '08:35～13:15', title: '搭乘 CI0130 飛往新千歲機場', transport: '交通：飛機', tClass: 't-rail', must: true },
+          { time: '14:30～15:20', title: '抵達飯店（札幌凱悅酒店）', transport: '住宿／移動', tClass: 't-stay', must: false },
+          { time: '15:20～15:50', title: '猿田彦珈琲', transport: '步行／市區', tClass: 't-walk', must: false },
+          { time: '15:50～16:20', title: 'Descente 衣服逛逛', transport: '步行／市區', tClass: 't-walk', must: false },
+          { time: '16:30～18:00', title: '奧芝商店', transport: '晚餐／市區', tClass: 't-walk', must: true, note: '北海道特色湯咖哩晚餐時間。' },
+          { time: '18:00～20:00', title: '東急百貨 UNIQLO、扭蛋、超市', transport: '逛街採買', tClass: 't-walk', must: false },
+          { time: '20:10～', title: '回飯店休息', transport: '返回住宿', tClass: 't-stay', must: false }
+        ]
+      },
+      {
+        dayKey: '12-20',
+        dateLabel: '12月20日（日）',
+        theme: '神宮參拜、札幌經典地標與狸小路',
+        stay: '住宿：札幌凱悅酒店',
+        items: [
+          { time: '08:00～09:30', title: '吃飯店早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '10:00～12:00', title: '北海道神宮', transport: '參拜景點', tClass: 't-rail', must: true },
+          { time: '12:30～14:00', title: '食堂 鼓動 (定食) 或 十勝豚丼いっぴん', transport: '午餐二選一', tClass: 't-walk', must: false },
+          { time: '14:10～15:30', title: '回飯店休息', transport: '返回住宿', tClass: 't-stay', must: false },
+          { time: '15:30～17:30', title: '舊市政廳、札幌市鐘樓、丸美珈琲店（丸井今井札幌本店大通館3階Café）、大通公園', transport: '市區散步', tClass: 't-walk', must: true, note: '大通館3樓丸美珈琲店喝杯咖啡歇息，順遊周遭地標。' },
+          { time: '17:40～18:30', title: "BILLY'S ENT Sapporoten (ON鞋店)", transport: '逛街', tClass: 't-walk', must: false },
+          { time: '18:30～20:00', title: '札幌 禪 (火鍋)', transport: '晚餐', tClass: 't-walk', must: false },
+          { time: '20:10～21:10', title: '逛狸小路和藥妝店', transport: '夜間採買', tClass: 't-walk', must: false }
+        ]
+      },
+      {
+        dayKey: '12-21',
+        dateLabel: '12月21日（一）',
+        theme: '搭乘 Hokuto 12 前往登別地獄谷',
+        stay: '入住：第一瀧本館',
+        items: [
+          { time: '08:30～09:30', title: '典藏星巴克', transport: '早晨咖啡', tClass: 't-walk', must: false },
+          { time: '09:30～10:30', title: '把行李丟去另一間飯店及退房', transport: '行李寄放／退房', tClass: 't-stay', must: false },
+          { time: '10:30～11:30', title: '車站逛逛、買中餐便當', transport: '札幌車站', tClass: 't-rail', must: false },
+          { time: '12:09～13:27', title: '車次 Hokuto 12 前往登別', transport: '交通：JR 特急', tClass: 't-rail', must: true },
+          { time: '13:50～14:06', title: '登別車站到第一瀧本館', transport: '交通：接駁／移動', tClass: 't-car', must: false },
+          { time: '14:10～15:00', title: '飯店入住（第一瀧本館）', transport: '辦理入住', tClass: 't-stay', must: false },
+          { time: '15:00～16:00', title: '登別地獄谷', transport: '步行／景點', tClass: 't-walk', must: true },
+          { time: '16:00～', title: '享受飯店設施', transport: '溫泉／設施', tClass: 't-stay', must: false }
+        ]
+      },
+      {
+        dayKey: '12-22',
+        dateLabel: '12月22日（二）',
+        theme: '搭乘 Hokuto 10 回札幌＆洞爺湖畔住宿',
+        stay: '入住：湖景飯店 洞爺乃之風',
+        items: [
+          { time: '08:00～09:30', title: '吃早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '09:30～10:00', title: '退房', transport: '退房手續', tClass: 't-stay', must: false },
+          { time: '10:00～10:30', title: '飯店叫計程車到登別車站', transport: '交通：計程車', tClass: 't-car', must: false },
+          { time: '12:09～12:50', title: '車次 Hokuto 10 回札幌', transport: '交通：JR 特急', tClass: 't-rail', must: true },
+          { time: '13:00～13:15', title: '抵達飯店', transport: '移動', tClass: 't-car', must: false },
+          { time: '13:15～', title: '附近走走、享受飯店設施（湖景飯店 洞爺乃之風）', transport: '湖景／設施', tClass: 't-stay', must: true }
+        ]
+      },
+      {
+        dayKey: '12-23',
+        dateLabel: '12月23日（三）',
+        theme: '接駁回札幌、根室花丸與啤酒博物館',
+        stay: '入住：札幌STREAM飯店',
+        items: [
+          { time: '08:00～09:30', title: '吃早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '09:30～09:50', title: '退房', transport: '退房手續', tClass: 't-stay', must: false },
+          { time: '10:00～12:30', title: '坐飯店接駁車抵達札幌站', transport: '交通：飯店接駁車', tClass: 't-car', must: true },
+          { time: '12:30～13:00', title: '抵達飯店（札幌STREAM飯店）', transport: '入住／寄放', tClass: 't-stay', must: false },
+          { time: '13:10～15:00', title: '迴轉壽司 根室花丸', transport: '午餐', tClass: 't-walk', must: true },
+          { time: '15:10～15:30', title: 'BARISTART COFFEE', transport: '咖啡時間', tClass: 't-walk', must: false },
+          { time: '16:00～18:30', title: '札幌啤酒博物館、Ario Sapporo 商場（UNIQLO、無印良品）', transport: '景點／商場', tClass: 't-rail', must: false },
+          { time: '19:00～20:30', title: '旭川成吉思汗 大黑屋 札幌貳號店 (烤羊肉)', transport: '晚餐', tClass: 't-walk', must: true }
+        ]
+      },
+      {
+        dayKey: '12-24',
+        dateLabel: '12月24日（四）',
+        theme: '小樽企鵝走路、運河堺町通與鰻魚飯',
+        stay: '住宿：札幌STREAM飯店',
+        items: [
+          { time: '07:30～08:50', title: '吃飯店早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '09:33～10:07', title: 'Airport 31 車次抵達小樽', transport: '交通：JR 快速', tClass: 't-rail', must: false },
+          { time: '10:30～12:30', title: '小樽水族館看 11:30 企鵝走路', transport: '交通：巴士／移動', tClass: 't-car', must: true, note: '記得提前卡位看 11:30 企鵝散步！' },
+          { time: '13:00～14:30', title: '牛排 或 若鶏時代 なると 本店 或 蕎麥麵', transport: '午餐三選一', tClass: 't-walk', must: false },
+          { time: '14:30～17:30', title: '小樽運河、小樽堺町通商店街、LeTAO 總店(下午茶)、小樽音樂盒堂', transport: '步行散步', tClass: 't-walk', must: true },
+          { time: '18:00～18:35', title: 'Airport 160 車次抵達札幌', transport: '交通：JR 快速', tClass: 't-rail', must: false },
+          { time: '19:30～21:00', title: 'Kadoya 鰻魚飯', transport: '晚餐', tClass: 't-walk', must: false },
+          { time: '21:00～22:30', title: 'BicCamera', transport: '電器／購物', tClass: 't-walk', must: false }
+        ]
+      },
+      {
+        dayKey: '12-25',
+        dateLabel: '12月25日（五）',
+        theme: '白色戀人、場外市場海鮮、北大與聖誕燈飾',
+        stay: '住宿：札幌STREAM飯店',
+        items: [
+          { time: '08:00～09:30', title: '飯店早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '10:10～11:40', title: '白色戀人博物館', transport: '交通：地下鐵／移動', tClass: 't-rail', must: true },
+          { time: '12:00～13:30', title: '場外市場 - 三上商店 (帝王蟹和海鮮丼)', transport: '午餐', tClass: 't-walk', must: true },
+          { time: '14:00～15:30', title: '北海道大學', transport: '校園散步', tClass: 't-walk', must: false },
+          { time: '16:00～17:00', title: "Espresso D'Works 下午茶", transport: '下午茶', tClass: 't-walk', must: false },
+          { time: '17:00～17:50', title: '飯店休息', transport: '返回住宿', tClass: 't-stay', must: false },
+          { time: '18:00～19:30', title: '薄野燒肉喜樂 (すすきの焼肉きらく)', transport: '晚餐', tClass: 't-walk', must: false },
+          { time: '20:00～21:00', title: '大通公園聖誕活動', transport: '聖誕夜活動', tClass: 't-walk', must: true }
+        ]
+      },
+      {
+        dayKey: '12-26',
+        dateLabel: '12月26日（六）',
+        theme: '機場伴手禮採買＆搭乘 CI0131 返回台北',
+        stay: '行程圓滿返台',
+        items: [
+          { time: '08:00～09:30', title: '飯店早餐', transport: '飯店', tClass: 't-stay', must: false },
+          { time: '09:30～10:00', title: '退房', transport: '退房手續', tClass: 't-stay', must: false },
+          { time: '10:00～10:40', title: '前往機場（新千歲機場）', transport: '交通：機場移動', tClass: 't-rail', must: true },
+          { time: '10:40～12:00', title: '逛伴手禮', transport: '機場購物', tClass: 't-walk', must: false },
+          { time: '12:00～13:30', title: '機場吃中餐', transport: '機場午餐', tClass: 't-walk', must: false },
+          { time: '14:40～18:15', title: 'CI0131 回台北', transport: '交通：飛機', tClass: 't-rail', must: true }
+        ]
+      }
+    ];
+
+    const DEFAULT_LISTS = {
+      todo: [
+        { id: 't1', text: '確認 Hokuto 12 與 Hokuto 10 車次時刻', done: false },
+        { id: 't2', text: '確認 12/23 洞爺乃之風前往札幌站接駁車預約', done: false },
+        { id: 't3', text: '小樽水族館確認 11:30 企鵝走路時間', done: false }
+      ],
+      pre: [
+        { id: 'p1', text: '護照效期確認與機票/飯店憑證備份', done: false },
+        { id: 'p2', text: '日本網卡 / eSIM 與交通 IC 卡準備', done: false },
+        { id: 'p3', text: 'Visit Japan Web 填寫完成', done: false },
+        { id: 'p4', text: '日圓現金與信用卡海外回饋確認', done: false }
+      ],
+      pack: [
+        { id: 'k1', text: '保暖防風外套與發熱衣', done: false },
+        { id: 'k2', text: '防滑好走的鞋子與厚襪子', done: false },
+        { id: 'k3', text: '手套、圍巾、毛帽與暖暖包', done: false },
+        { id: 'k4', text: '護唇膏、護手霜與保濕乳液', done: false },
+        { id: 'k5', text: '行動電源與充電線', done: false }
+      ]
+    };
+
+    const STORAGE_KEY = 'hokkaido_winter_trip_2026_v1';
+    const MOTION_KEY = 'hokkaido_reduced_motion_v1';
+
+    function loadListsState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(DEFAULT_LISTS);
+        const parsed = JSON.parse(raw);
+        return {
+          todo: Array.isArray(parsed.todo) ? parsed.todo : structuredClone(DEFAULT_LISTS.todo),
+          pre: Array.isArray(parsed.pre) ? parsed.pre : structuredClone(DEFAULT_LISTS.pre),
+          pack: Array.isArray(parsed.pack) ? parsed.pack : structuredClone(DEFAULT_LISTS.pack)
+        };
+      } catch {
+        return structuredClone(DEFAULT_LISTS);
+      }
+    }
+
+    let listsState = loadListsState();
+
+    function saveListsState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(listsState));
+      } catch {
+        // 忽略儲存空間限制
+      }
+    }
+
+    function renderAllLists() {
+      ['todo', 'pre', 'pack'].forEach((type) => {
+        const ul = document.getElementById(`list-${type}`);
+        const counter = document.getElementById(`count-${type}`);
+        const items = listsState[type] || [];
+        const doneCount = items.filter((i) => i.done).length;
+        counter.textContent = `${doneCount}/${items.length}`;
+
+        ul.innerHTML = '';
+        items.forEach((item) => {
+          const li = document.createElement('li');
+          li.className = 'check-item';
+
+          const label = document.createElement('label');
+          label.className = `check-label ${item.done ? 'done' : ''}`;
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.className = 'check-input';
+          checkbox.checked = Boolean(item.done);
+          checkbox.addEventListener('change', () => {
+            item.done = checkbox.checked;
+            saveListsState();
+            renderAllLists();
+          });
+
+          const span = document.createElement('span');
+          span.textContent = item.text;
+
+          label.appendChild(checkbox);
+          label.appendChild(span);
+
+          const delBtn = document.createElement('button');
+          delBtn.type = 'button';
+          delBtn.className = 'del-btn';
+          delBtn.textContent = '刪除';
+          delBtn.setAttribute('aria-label', `刪除 ${item.text}`);
+          delBtn.addEventListener('click', () => {
+            listsState[type] = listsState[type].filter((x) => x.id !== item.id);
+            saveListsState();
+            renderAllLists();
+          });
+
+          li.appendChild(label);
+          li.appendChild(delBtn);
+          ul.appendChild(li);
+        });
+      });
+    }
+
+    document.querySelectorAll('.add-form').forEach((form) => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const type = form.getAttribute('data-list');
+        const input = form.querySelector('.add-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        listsState[type].push({
+          id: `${type}_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+          text,
+          done: false
+        });
+        input.value = '';
+        saveListsState();
+        renderAllLists();
+      });
+    });
+
+    // 日期切換與時間軸渲染
+    const tabsEl = document.getElementById('dayTabs');
+    const panelEl = document.getElementById('dayPanel');
+    let activeDayIndex = 0;
+
+    function renderDayTabs() {
+      tabsEl.innerHTML = '';
+      ITINERARY_DATA.forEach((day, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.role = 'tab';
+        btn.className = `day-tab ${idx === activeDayIndex ? 'active' : ''}`;
+        btn.setAttribute('aria-selected', idx === activeDayIndex ? 'true' : 'false');
+        btn.textContent = day.dateLabel.replace(/（.*）/, '');
+        btn.addEventListener('click', () => {
+          if (activeDayIndex === idx) return;
+          activeDayIndex = idx;
+          renderDayTabs();
+          renderDayPanel(true);
+        });
+        tabsEl.appendChild(btn);
+      });
+    }
+
+    function renderDayPanel(triggerBounce) {
+      const day = ITINERARY_DATA[activeDayIndex];
+
+      if (triggerBounce) {
+        panelEl.classList.remove('timeline-panel');
+        void panelEl.offsetWidth;
+        panelEl.classList.add('timeline-panel');
+      }
+
+      const itemsHtml = day.items
+        .map(
+          (item) => `
+          <div class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-meta">
+              <span class="time-badge">${item.time}</span>
+              ${item.must ? '<span class="must-badge">必去</span>' : ''}
+              <span class="transport-badge ${item.tClass}">${item.transport}</span>
+            </div>
+            <h3 class="timeline-title">${item.title}</h3>
+            ${item.note ? `<p class="timeline-note">${item.note}</p>` : ''}
+          </div>
+        `
+        )
+        .join('');
+
+      panelEl.innerHTML = `
+        <div class="day-banner">
+          <div>
+            <h3 class="day-banner-title">${day.dateLabel} · ${day.theme}</h3>
+          </div>
+          <span class="day-stay-pill">${day.stay}</span>
+        </div>
+        <div class="timeline">
+          ${itemsHtml}
+        </div>
+      `;
+    }
+
+    // 出發倒數（2026-12-19 08:35 JST / 台灣出發時間以 2026-12-19T08:35:00+08:00 計算）
+    const departureTime = new Date('2026-12-19T08:35:00+08:00').getTime();
+    const returnTime = new Date('2026-12-26T18:15:00+08:00').getTime();
+
+    function updateCountdown() {
+      const now = Date.now();
+      const daysEl = document.getElementById('cdDays');
+      const hoursEl = document.getElementById('cdHours');
+      const minsEl = document.getElementById('cdMins');
+      const secsEl = document.getElementById('cdSecs');
+      const statusEl = document.getElementById('tripStatusTag');
+
+      const diff = departureTime - now;
+      if (diff > 0) {
+        const totalSecs = Math.floor(diff / 1000);
+        const d = Math.floor(totalSecs / 86400);
+        const h = Math.floor((totalSecs % 86400) / 3600);
+        const m = Math.floor((totalSecs % 3600) / 60);
+        const s = totalSecs % 60;
+
+        daysEl.textContent = String(d).padStart(2, '0');
+        hoursEl.textContent = String(h).padStart(2, '0');
+        minsEl.textContent = String(m).padStart(2, '0');
+        secsEl.textContent = String(s).padStart(2, '0');
+        statusEl.textContent = '準備出發中';
+      } else if (now >= departureTime && now <= returnTime) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minsEl.textContent = '00';
+        secsEl.textContent = '00';
+        statusEl.textContent = '旅途進行中！';
+      } else {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minsEl.textContent = '00';
+        secsEl.textContent = '00';
+        statusEl.textContent = '已圓滿返台';
+      }
+    }
+
+    // 減少動態效果切換（尊重系統 prefers-reduced-motion 也可手動切換）
+    const motionBtn = document.getElementById('motionToggle');
+    function applyMotionState(reduced) {
+      document.body.classList.toggle('reduced-motion', reduced);
+      motionBtn.setAttribute('aria-pressed', reduced ? 'true' : 'false');
+      motionBtn.querySelector('span').textContent = reduced ? '動態：已減少' : '動態：開';
+    }
+
+    let initialReduced = false;
+    try {
+      const savedMotion = localStorage.getItem(MOTION_KEY);
+      if (savedMotion !== null) {
+        initialReduced = savedMotion === 'true';
+      } else if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        initialReduced = true;
+      }
+    } catch {
+      initialReduced = false;
+    }
+
+    applyMotionState(initialReduced);
+
+    motionBtn.addEventListener('click', () => {
+      const nextState = !document.body.classList.contains('reduced-motion');
+      applyMotionState(nextState);
+      try {
+        localStorage.setItem(MOTION_KEY, String(nextState));
+      } catch {
+        // 忽略
+      }
+    });
+
+    // 初始化
+    renderDayTabs();
+    renderDayPanel(false);
+    renderAllLists();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
